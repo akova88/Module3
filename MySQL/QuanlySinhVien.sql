@@ -27,7 +27,7 @@ SubID int not null,
 StudentID int NOT NULL,
 Mark FLOAT DEFAULT 0 CHECK (Mark BETWEEN 0 AND 100),
 ExamTimes TINYINT DEFAULT 1,
-UNIQUE KEY (SubID, StudentID),
+UNIQUE (SubID, StudentID),
 FOREIGN KEY (SubID) REFERENCES Subject (SubID),
 FOREIGN KEY (StudentID) REFERENCES Student (StudentID)
 );
