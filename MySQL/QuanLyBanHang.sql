@@ -20,7 +20,7 @@ pPrice DOUBLE
 CREATE TABLE OrderDetail(
 oID int not NULL,
 pID int not NULL,
-FOREIGN KEY (oID) REFERENCES `Order` (cID),
+FOREIGN KEY (oID) REFERENCES `Order` (oID),
 FOREIGN KEY (pID) REFERENCES Product (pID)
 );
 ALTER TABLE quanlybanhang.orderdetail
