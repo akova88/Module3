@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html {
+            font-family: 'Lucida Sans', sans-serif;
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        .header {
+            background-color: #9933cc;
+            color: #ffffff;
+            padding: 15px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu li {
+            padding: 8px;
+            margin-bottom: 7px;
+            background: #33b5e5;
+            color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+
+        .menu li:hover {
+            background-color: #0099cc;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+        .col-9 {
+            width: 75%;
+        }
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Akova</h1>
+    </div>
+    <div class="row">
+        <div class="col-3 menu">
+            <ul>
+                <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li>
+            </ul>
+        </div>
+        <div class="col-9">
+            <h1>The City</h1>
+            <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+            <p>Resize the browser window to see how the content respond to the resizing.</p>
+        </div>
+    </div>
+
+</body>
+</html>
