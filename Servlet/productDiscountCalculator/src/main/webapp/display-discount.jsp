@@ -9,6 +9,11 @@
 <html>
 <head>
     <title>display-discount</title>
+    <style>
+        th, td {
+            border: 1px solid gray;
+        }
+    </style>
 </head>
 <body>
     <table>
