@@ -42,13 +42,16 @@
   <input type="hidden" id="txtIdEdit" name="idEdit"/>
 
 </form>
-<table class="table table-sm table-bordered w-50">
+<table class="table table-sm table-bordered w-60">
   <thead>
   <tr>
     <th>Tên</th>
     <th>Email</th>
     <th>Địa chỉ</th>
+    <th>Ngày tạo</th>
+    <th>Type</th>
     <th>Action</th>
+
   </tr>
   </thead>
   <tbody>
@@ -57,6 +60,8 @@
       <td>${c.getName()}</td>
       <td>${c.getEmail()}</td>
       <td>${c.getAddress()}</td>
+      <td>${c.getCreateAt()}</td>
+      <td>${c.getCustomerType().getName()}</td>
       <td>
         <a href="/customers?action=edit&id=${c.getId()}"><i class="fa-solid fa-pen-to-square"></i></a>
         <a href="javascript:void(0)" onclick="handleDelete(${c.getId()}, '${c.getName()}')"><i class="fa-solid fa-trash"></i></a>

@@ -10,19 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bf3d31a-5691-4f08-8975-6e26fe5ba35d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/controller/CustomerServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/model/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/ICustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/customer/create.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/customer/edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/customer/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/DBContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/model/CustomerType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/CustomerTypeImplMySql.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/ICustomerType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/utils/ValidateUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Bootstrap/customerList.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Bootstrap/customerList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/controller/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/controller/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/CustomerServiceImplMySql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/CustomerServiceImplMySql.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/customer/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/customer/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/customer/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/customer/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/customer/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/customer/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -65,6 +68,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -74,6 +78,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -185,7 +190,12 @@
       <updated>1686120751317</updated>
       <workItem from="1686120752302" duration="11798000" />
       <workItem from="1686148540107" duration="6711000" />
-      <workItem from="1686186039542" duration="2722000" />
+      <workItem from="1686186039542" duration="19529000" />
+      <workItem from="1686275384727" duration="9016000" />
+      <workItem from="1686324829031" duration="4454000" />
+      <workItem from="1686367732855" duration="6025000" />
+      <workItem from="1686437628056" duration="4021000" />
+      <workItem from="1686493048548" duration="6394000" />
     </task>
     <servers />
   </component>
@@ -197,8 +207,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/controller/CustomerServlet.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="2" />
+          <line>83</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

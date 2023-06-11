@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface ICustomerService {
     List<Customer> findAll();
+    List<Customer> findAll2();
 
     void save(Customer customer);
 

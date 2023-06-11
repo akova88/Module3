@@ -24,6 +24,11 @@ public class CustomerServiceImpl implements ICustomerService{
     }
 
     @Override
+    public List<Customer> findAll2() {
+        return null;
+    }
+
+    @Override
     public void save(Customer customer) {
         customers.put(customer.getId(), customer);
     }
