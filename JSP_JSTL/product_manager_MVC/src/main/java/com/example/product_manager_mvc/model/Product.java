@@ -7,6 +7,8 @@ public class Product {
     private float price;
     private String description;
     private String company;
+    private int idCategory;
+    private Category category;
 
     public Product() {
     }
@@ -17,6 +19,31 @@ public class Product {
         this.price = price;
         this.description = description;
         this.company = company;
+    }
+
+    public Product(int id, String name, float price, String description, String company, int idCategory) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.company = company;
+        this.idCategory = idCategory;
+    }
+
+    public int getIdCategory() {
+        return idCategory;
+    }
+
+    public void setIdCategory(int idCategory) {
+        this.idCategory = idCategory;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public int getId() {

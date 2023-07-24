@@ -24,6 +24,15 @@
 <form method="post">
     <fieldset style="border: 1px solid gray; width: 400px" class="m-5 table">
         <legend class="text-center">Product information</legend>
+        <c:if test="${requestScope.errors != null}">
+            <div class="alert alert-danger">
+                <ul>
+                    <c:forEach items="${requestScope.errors}" var="e">
+                        <li>${e}</li>
+                    </c:forEach>
+                </ul>
+            </div>
+        </c:if>
         <table class="table-hover container">
             <tr>
                 <td>Name: </td>
@@ -35,12 +44,23 @@
             </tr>
             <tr>
                 <td>Description: </td>
-                <td><input type="text" name="decs" id="decs" value="${requestScope.product.getDescription()}"></td>
+                <td><input type="text" name="desc" id="desc" value="${requestScope.product.getDescription()}"></td>
             </tr>
             <tr>
                 <td>Company: </td>
                 <td><input type="text" name="company" id="company" value="${requestScope.product.getCompany()}"></td>
             </tr>
+            <td>Category:</td>
+
+            <td>
+                <select name="category" class="form-control">
+                    <c:forEach items="${requestScope.categories}" var="ct">
+                        <option
+                                <c:if test="${ct.getIdCategory() == requestScope.product.getCategory().getIdCategory()}">selected</c:if>
+                                value="${ct.getIdCategory()}">${ct.getNameCategory()}</option>
+                    </c:forEach>
+                </select>
+            </td>
             <tr>
                 <td></td>
                 <td><input class="btn btn-dark" type="submit" value="Edit Product"></td>

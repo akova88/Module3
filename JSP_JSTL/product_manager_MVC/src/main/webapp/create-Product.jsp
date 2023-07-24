@@ -24,6 +24,15 @@
 <form method="post">
   <fieldset style="border: 1px solid gray; width: 400px" class="m-5 table">
     <legend class="text-center">Product information</legend>
+    <c:if test="${requestScope.errors != null}">
+      <div class="alert alert-danger">
+        <ul>
+          <c:forEach items="${requestScope.errors}" var="e">
+            <li>${e}</li>
+          </c:forEach>
+        </ul>
+      </div>
+    </c:if>
     <table class="table-hover container">
       <tr>
         <td>Name: </td>
@@ -35,11 +44,21 @@
       </tr>
       <tr>
         <td>Description: </td>
-        <td><input type="text" name="decs" id="decs"></td>
+        <td><input type="text" name="desc" id="desc"></td>
       </tr>
       <tr>
         <td>Company: </td>
         <td><input type="text" name="company" id="company"></td>
+      </tr>
+      <tr>
+        <td>Category</td>
+        <td>
+          <select name="category" class="form-control">
+            <c:forEach items="${categories}" var="ct">
+              <option value="${ct.getIdCategory()}">${ct.getNameCategory()}</option>
+            </c:forEach>
+          </select>
+        </td>
       </tr>
       <tr>
         <td></td>
@@ -47,7 +66,7 @@
       </tr>
     </table>
   </fieldset>
-  <a class="btn btn-primary" href="/customers"><i class="fa-solid fa-backward"></i>BACK SHOW CUSTOMER</a>
+  <a class="btn btn-primary" href="/products"><i class="fa-solid fa-backward"></i>BACK SHOW PRODUCT</a>
 </form>
 <body>
 

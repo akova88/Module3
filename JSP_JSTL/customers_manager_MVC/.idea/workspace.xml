@@ -10,22 +10,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bf3d31a-5691-4f08-8975-6e26fe5ba35d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/DBContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/model/CustomerType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/CustomerTypeImplMySql.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/ICustomerType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/utils/ValidateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/customer/date.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_manager_MVC/src/main/java/com/example/product_manager_mvc/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_manager_MVC/src/main/java/com/example/product_manager_mvc/sercive/CategoryImplMySql.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_manager_MVC/src/main/java/com/example/product_manager_mvc/sercive/ICategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_manager_MVC/src/main/java/com/example/product_manager_mvc/sercive/ProductServiceImplMySql.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_manager_MVC/src/main/java/com/example/product_manager_mvc/utils/DBContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_manager_MVC/src/main/java/com/example/product_manager_mvc/utils/Validate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/src/main/java/com/example/users_manager_mvc/HelloServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/src/main/java/com/example/users_manager_mvc/controller/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/src/main/java/com/example/users_manager_mvc/dao/IUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/src/main/java/com/example/users_manager_mvc/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/src/main/java/com/example/users_manager_mvc/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_manager_MVC/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/src/main/java/com/example/student_manager_mvc/HelloServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/src/main/java/controller/StudentServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/src/main/java/model/Classroom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/src/main/java/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/src/main/java/service/ClassService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/src/main/java/service/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/src/main/java/utils/DBContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/src/main/webapp/create-Student.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/src/main/webapp/edit-Student.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../student_manager_MVC/src/main/webapp/list-Student.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Bootstrap/customerList.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Bootstrap/customerList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/DBContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/DBContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/controller/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/controller/CustomerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/CustomerServiceImplMySql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/CustomerServiceImplMySql.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/service/ICustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/customer/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/customer/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/customer/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/customer/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/customer/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/customer/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/utils/ValidateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/utils/ValidateUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product_manager_MVC/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product_manager_MVC/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product_manager_MVC/src/main/java/com/example/product_manager_mvc/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product_manager_MVC/src/main/java/com/example/product_manager_mvc/controller/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product_manager_MVC/src/main/java/com/example/product_manager_mvc/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product_manager_MVC/src/main/java/com/example/product_manager_mvc/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product_manager_MVC/src/main/webapp/create-Product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../product_manager_MVC/src/main/webapp/create-Product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product_manager_MVC/src/main/webapp/edit-Product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../product_manager_MVC/src/main/webapp/edit-Product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product_manager_MVC/src/main/webapp/list-Product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../product_manager_MVC/src/main/webapp/list-Product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TOMCAT/apache-tomcat-9.0.75/webapps/ROOT/RELEASE-NOTES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TOMCAT/apache-tomcat-9.0.75/webapps/ROOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TOMCAT/apache-tomcat-9.0.75/webapps/ROOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TOMCAT/apache-tomcat-9.0.75/webapps/ROOT/asf-logo-wide.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TOMCAT/apache-tomcat-9.0.75/webapps/ROOT/bg-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TOMCAT/apache-tomcat-9.0.75/webapps/ROOT/bg-middle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TOMCAT/apache-tomcat-9.0.75/webapps/ROOT/bg-nav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TOMCAT/apache-tomcat-9.0.75/webapps/ROOT/bg-upper.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TOMCAT/apache-tomcat-9.0.75/webapps/ROOT/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TOMCAT/apache-tomcat-9.0.75/webapps/ROOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../TOMCAT/apache-tomcat-9.0.75/webapps/ROOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TOMCAT/apache-tomcat-9.0.75/webapps/ROOT/tomcat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TOMCAT/apache-tomcat-9.0.75/webapps/ROOT/tomcat.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +85,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -74,6 +124,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Module3/JSP_JSTL/demoJSTL&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -195,22 +246,18 @@
       <workItem from="1686324829031" duration="4454000" />
       <workItem from="1686367732855" duration="6025000" />
       <workItem from="1686437628056" duration="4021000" />
-      <workItem from="1686493048548" duration="6394000" />
+      <workItem from="1686493048548" duration="6583000" />
+      <workItem from="1686531788098" duration="953000" />
+      <workItem from="1686758175383" duration="1271000" />
+      <workItem from="1686811855050" duration="1971000" />
+      <workItem from="1686885292885" duration="5714000" />
+      <workItem from="1687268944022" duration="917000" />
+      <workItem from="1687320941512" duration="975000" />
+      <workItem from="1687794302051" duration="43000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/customers_manager_mvc/controller/CustomerServlet.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

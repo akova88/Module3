@@ -107,7 +107,7 @@ public class CustomerServlet extends HttpServlet {
         validateInputAddress(req, errors, customer);
         validateInputCustomerType(req, errors, customer);
         if (errors.isEmpty()) {
-            iCustomerService.update(customer.getId(), customer);
+            iCustomerService.update(idCustomer, customer);
             req.setAttribute("message", "Sửa thành công");
 //            resp.sendRedirect("/customers");
         } else {
@@ -128,7 +128,7 @@ public class CustomerServlet extends HttpServlet {
         validateInputCustomerType(req, errors, customer);
         validateInputAddress(req, errors, customer);
 
-        long id = System.currentTimeMillis() % 100000;
+//        long id = System.currentTimeMillis() % 100000;
 
         if (errors.isEmpty()) {
             iCustomerService.save(customer);

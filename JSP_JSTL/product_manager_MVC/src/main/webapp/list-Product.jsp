@@ -162,7 +162,7 @@
                     </div>
                 </div>
             </div>
-            <a class="btn btn-primary" href="/products?action=create"><i class="fa-solid fa-user-plus"></i>ADD NEW CUSTOMER</a>
+            <a class="btn btn-primary" href="/products?action=create"><i class="fa-solid fa-user-plus"></i>ADD NEW PRODUCT</a>
             <table class="table table-striped table-hover table-bordered">
                 <thead>
                 <tr>
@@ -171,10 +171,13 @@
                     <th>Price</th>
                     <th>Description <i class="fa fa-sort"></i></th>
                     <th>Company</th>
+                    <th>Category</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
+
+
                 <c:forEach items="${requestScope.products}" var="p">
                     <tr>
                         <td>${p.getId()}</td>
@@ -182,6 +185,7 @@
                         <td>${p.getPrice()}</td>
                         <td>${p.getDescription()}</td>
                         <td>${p.getCompany()}</td>
+                        <td>${p.getCategory().getNameCategory()}</td>
                         <td>
                             <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
                             <a href="/products?action=edit&id=${p.getId()}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
