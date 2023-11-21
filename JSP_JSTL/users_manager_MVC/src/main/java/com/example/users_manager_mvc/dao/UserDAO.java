@@ -100,7 +100,8 @@ public class UserDAO implements IUserDAO{
     @Override
     public boolean updateUser(User user) throws SQLException {
         boolean rowUpdated;
-        try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USERS_SQL);){
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USERS_SQL);){
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getEmail());
             preparedStatement.setString(3, user.getCountry());
@@ -108,6 +109,25 @@ public class UserDAO implements IUserDAO{
             rowUpdated = preparedStatement.executeUpdate()>0;
         }
         return rowUpdated;
+    }
+
+    public List<User> searchUser(String kw) throws SQLException {
+        List<User> listUser = new ArrayList<>();
+
+        try(Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE name LIKE ? OR country LIKE ? ")){
+            preparedStatement.setString(1, "%"+kw+"%");
+            preparedStatement.setString(2, "%"+ kw +"%");
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                listUser.add(new User(id, name, email, country));
+            }
+        }
+        return listUser;
     }
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {

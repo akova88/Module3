@@ -11,6 +11,8 @@
 <html>
 <head>
     <title>User Management Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 <header align="center">
@@ -22,6 +24,13 @@
 <div align="center">
     <table border="1" cellpadding="5">
         <caption><h2>List of User</h2></caption>
+        <div class="col-sm-4">
+            <form method="post" action="/users?action=search">
+                <div class="search-box">
+                    <input name="kw" type="text" class="form-control" placeholder="Search&hellip;">
+                </div>
+            </form>
+        </div>
         <tr>
             <th>ID</th>
             <th>Name</th>

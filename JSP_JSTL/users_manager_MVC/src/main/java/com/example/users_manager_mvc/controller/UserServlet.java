@@ -36,6 +36,9 @@ public class UserServlet extends HttpServlet {
                 case "edit":
                     updateUser(req, resp);
                     break;
+                case "search":
+                    searchUser(req, resp);
+                    break;
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
@@ -112,8 +115,11 @@ public class UserServlet extends HttpServlet {
         req.getRequestDispatcher("user/list.jsp").forward(req, resp);
     }
 
-
-
-
-
+    private void searchUser(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ServletException, IOException {
+        String kw = req.getParameter("kw");
+        List<User> listUser = userDAO.searchUser(kw);
+//        req.setAttribute("kw", kw);
+        req.setAttribute("listUser", listUser);
+        req.getRequestDispatcher("user/list.jsp").forward(req, resp);
+    }
 }
