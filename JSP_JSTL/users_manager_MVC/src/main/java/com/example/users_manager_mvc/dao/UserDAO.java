@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO implements IUserDAO{
+public class UserDAO implements IUserDAO {
     private String jdbcURL = "jdbc:mysql://localhost:3306/users?useSSL=false";
     private String jdbcUsername = "root";
     private String jdbcPassword = "Raisingthebar123@";
@@ -20,6 +20,7 @@ public class UserDAO implements IUserDAO{
 
     public UserDAO() {
     }
+
     protected Connection getConnection() {
         Connection connection = null;
         try {
@@ -37,9 +38,9 @@ public class UserDAO implements IUserDAO{
     public User getUserById(int id) {
         User user = null;
         String query = "{CALL get_user_by_id(?)}";
-        try(Connection connection = getConnection();
-        CallableStatement callableStatement = connection.prepareCall(query)){
-            callableStatement.setInt(1,id);
+        try (Connection connection = getConnection();
+             CallableStatement callableStatement = connection.prepareCall(query)) {
+            callableStatement.setInt(1, id);
             ResultSet rs = callableStatement.executeQuery();
 
             while (rs.next()) {
@@ -48,7 +49,7 @@ public class UserDAO implements IUserDAO{
                 String country = rs.getString("country");
                 user = new User(id, name, email, country);
             }
-        } catch (SQLException e){
+        } catch (SQLException e) {
             printSQLException(e);
         }
         return user;
@@ -57,20 +58,75 @@ public class UserDAO implements IUserDAO{
     @Override
     public void insertUserStore(User user) throws SQLException {
         String query = "{CALL insert_user(?,?,?)";
-        try(Connection connection = getConnection();
-            CallableStatement callableStatement = connection.prepareCall(query)){
-            callableStatement.setString(1,user.getName());
-            callableStatement.setString(1,user.getEmail());
-            callableStatement.setString(1,user.getCountry());
+        try (Connection connection = getConnection();
+             CallableStatement callableStatement = connection.prepareCall(query)) {
+            callableStatement.setString(1, user.getName());
+            callableStatement.setString(1, user.getEmail());
+            callableStatement.setString(1, user.getCountry());
             callableStatement.executeQuery();
-        } catch (SQLException e){
+        } catch (SQLException e) {
             printSQLException(e);
         }
     }
 
     @Override
+    public void addUserTransaction(User user, List<Integer> permissions) {
+        Connection connection = null;
+        PreparedStatement ps = null;
+        PreparedStatement psAssign = null;
+        ResultSet rs = null;
+
+        try {
+            connection = getConnection();
+            connection.setAutoCommit(false);
+            ps = connection.prepareStatement(INSERT_USERS_SQL, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getEmail());
+            ps.setString(3, user.getCountry());
+            int rowAffected = ps.executeUpdate();
+
+            rs = ps.getGeneratedKeys();
+            int userId = 0;
+            if (rs.next()) {
+                userId = rs.getInt(1);
+            }
+
+            if (rowAffected == 1) {
+                String sql = "INSERT INTO user_permision(user_id, permision_id) VALUES(?, ?)";
+                psAssign = connection.prepareStatement(sql);
+                for (int permissionId : permissions) {
+                    psAssign.setInt(1, userId);
+                    psAssign.setInt(2, permissionId);
+                    psAssign.executeUpdate();
+                }
+                connection.commit();
+            } else {
+                connection.rollback();
+            }
+        } catch (SQLException e) {
+            try {
+                if (connection != null) {
+                    connection.rollback();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+                if (psAssign != null) psAssign.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    @Override
     public void insertUser(User user) {
-        try(Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
+        try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getEmail());
             preparedStatement.setString(3, user.getCountry());
@@ -104,7 +160,7 @@ public class UserDAO implements IUserDAO{
     public List<User> selectAllUsers() {
         List<User> users = new ArrayList<>();
         try (Connection connection = getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS);){
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS);) {
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -126,7 +182,7 @@ public class UserDAO implements IUserDAO{
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_USERS_SQL);) {
             preparedStatement.setInt(1, id);
-            rowDeleted = preparedStatement.executeUpdate() >0;
+            rowDeleted = preparedStatement.executeUpdate() > 0;
         }
         return rowDeleted;
     }
@@ -136,12 +192,12 @@ public class UserDAO implements IUserDAO{
     public boolean updateUser(User user) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USERS_SQL);){
+             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USERS_SQL);) {
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getEmail());
             preparedStatement.setString(3, user.getCountry());
             preparedStatement.setInt(4, user.getId());
-            rowUpdated = preparedStatement.executeUpdate()>0;
+            rowUpdated = preparedStatement.executeUpdate() > 0;
         }
         return rowUpdated;
     }
@@ -149,10 +205,10 @@ public class UserDAO implements IUserDAO{
     public List<User> searchUser(String kw) throws SQLException {
         List<User> listUser = new ArrayList<>();
 
-        try(Connection connection = getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE name LIKE ? OR country LIKE ? ")){
-            preparedStatement.setString(1, "%"+kw+"%");
-            preparedStatement.setString(2, "%"+ kw +"%");
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE name LIKE ? OR country LIKE ? ")) {
+            preparedStatement.setString(1, "%" + kw + "%");
+            preparedStatement.setString(2, "%" + kw + "%");
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -164,6 +220,7 @@ public class UserDAO implements IUserDAO{
         }
         return listUser;
     }
+
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {
