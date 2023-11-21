@@ -63,8 +63,11 @@ public class UserServlet extends HttpServlet {
                 case "delete":
                     deleteUser(req, resp);
                     break;
-                case "test-without-tran":
-                    testWithoutTran(req, resp);
+//                case "test-without-tran":
+//                    testWithoutTran(req, resp);
+//                    break;
+                case "test-use-tran":
+                    testUseTran(req, resp);
                     break;
                 default:
                     listUser(req, resp);
@@ -75,9 +78,14 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    private void testWithoutTran(HttpServletRequest req, HttpServletResponse resp) {
-        userDAO.insertUpdateWithoutTransaction();
+    private void testUseTran(HttpServletRequest req, HttpServletResponse resp) {
+
+        userDAO.insertUpdateUseTransaction();
+
     }
+//    private void testWithoutTran(HttpServletRequest req, HttpServletResponse resp) {
+//        userDAO.insertUpdateWithoutTransaction();
+//    }
 
     private void listUser(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
         List<User> listUser = userDAO.selectAllUsers();
