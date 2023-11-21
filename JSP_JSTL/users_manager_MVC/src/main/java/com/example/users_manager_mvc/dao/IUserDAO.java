@@ -9,8 +9,12 @@ public interface IUserDAO {
     void insertUser(User user);
     User selectUser(int id);
     List<User> selectAllUsers();
+
+    List<User> getAllUsers();
     boolean deleteUser(int id) throws SQLException;
+    boolean deleteUserStore(int id) throws SQLException;
     boolean updateUser(User user) throws SQLException;
+    boolean updateUseStore(User user) throws SQLException;
 
     User getUserById(int id);
 

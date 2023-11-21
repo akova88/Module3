@@ -69,13 +69,34 @@ public class UserDAO implements IUserDAO {
     }
 
     @Override
+    public List<User> getAllUsers() {
+        List<User> users = new ArrayList<>();
+        String query = "{CALL get_all_user}";
+        try (Connection connection = getConnection();
+             CallableStatement callableStatement = connection.prepareCall(query)) {
+            callableStatement.executeQuery();
+            ResultSet rs = callableStatement.getResultSet();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                users.add(new User(id, name, email, country));
+            }
+        } catch (SQLException e) {
+            printSQLException(e);
+        }
+        return users;
+    }
+
+    @Override
     public void insertUserStore(User user) throws SQLException {
         String query = "{CALL insert_user(?,?,?)";
         try (Connection connection = getConnection();
              CallableStatement callableStatement = connection.prepareCall(query)) {
             callableStatement.setString(1, user.getName());
-            callableStatement.setString(1, user.getEmail());
-            callableStatement.setString(1, user.getCountry());
+            callableStatement.setString(2, user.getEmail());
+            callableStatement.setString(3, user.getCountry());
             callableStatement.executeQuery();
         } catch (SQLException e) {
             printSQLException(e);
@@ -234,6 +255,17 @@ public class UserDAO implements IUserDAO {
         return rowDeleted;
     }
 
+    @Override
+    public boolean deleteUserStore(int id) throws SQLException {
+        boolean rowDeleted;
+        String query = "{CALL delete_user_by_id(?)}";
+        try (Connection connection = getConnection();
+             CallableStatement callableStatement = connection.prepareCall(query);) {
+            callableStatement.setInt(1, id);
+            rowDeleted = callableStatement.executeUpdate() > 0;
+        }
+        return rowDeleted;
+    }
 
     @Override
     public boolean updateUser(User user) throws SQLException {
@@ -245,6 +277,21 @@ public class UserDAO implements IUserDAO {
             preparedStatement.setString(3, user.getCountry());
             preparedStatement.setInt(4, user.getId());
             rowUpdated = preparedStatement.executeUpdate() > 0;
+        }
+        return rowUpdated;
+    }
+
+    @Override
+    public boolean updateUseStore(User user) throws SQLException {
+        boolean rowUpdated;
+        String query = "{CALL update_user(?, ?, ?, ?)}";
+        try (Connection connection = getConnection();
+             CallableStatement callableStatement = connection.prepareCall(query)) {
+            callableStatement.setInt(1, user.getId());
+            callableStatement.setString(2, user.getName());
+            callableStatement.setString(3, user.getEmail());
+            callableStatement.setString(4, user.getCountry());
+            rowUpdated = callableStatement.executeUpdate() > 0;
         }
         return rowUpdated;
     }
