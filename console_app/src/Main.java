@@ -11,5 +11,7 @@ public class Main {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
+
+        Quadratic_equation2.quadratic_equation2(0, 0, 0);
     }
 }
